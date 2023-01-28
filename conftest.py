@@ -15,6 +15,7 @@ class User:
         self.name = ''
         self.second_name = ''
 
+
 @pytest.fixture
 def user():
     user = User()
