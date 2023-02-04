@@ -34,6 +34,6 @@ def github_api():
 
 
 @pytest.fixture
-def database():
+def create_database():
     db = Database()
     yield db
