@@ -4,7 +4,7 @@ import sqlite3
 class Database:
 
     def __init__(self) -> None:
-        self.connection = sqlite3.connect(r'/home/romcha/projects/qa_auto_23_rch' + r'/become_qa_auto.bd')
+        self.connection = sqlite3.connect(r'/home/romcha/projects/qa_auto_23_rch' + r'/become_qa_auto.db')
         self.cursor = self.connection.cursor()
 
     def test_connection(self):
