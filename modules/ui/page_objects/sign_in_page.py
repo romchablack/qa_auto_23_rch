@@ -4,9 +4,11 @@ import time
 
 
 class SignInPage(BasePage):
+    url = "https://github.com/login"
+
     def __init__(self) -> None:
         super().__init__()
-        self.driver.get("https://github.com/login")
+        self.driver.get(self.url)
 
     def login_attempt(self, username, password):
         # find username field
@@ -16,13 +18,10 @@ class SignInPage(BasePage):
         time.sleep(1)
         # find password field
         pass_fld = self.driver.find_element(By.ID, "password")
-        name_fld.clear()
+        pass_fld.clear()
         pass_fld.send_keys(password)
         time.sleep(1)
         # find login button
         login_btn = self.driver.find_element(By.NAME, "commit")
         login_btn.click()
         time.sleep(1)
-
-    def check_title(self):
-        return "Sign in to GitHub" in self.driver.title
